@@ -1,0 +1,67 @@
+{
+  "analyticConfiguration" : {
+    "tenantId" : null,
+    "type" : "METRIC_META",
+    "id" : null,
+    "packageId" : null,
+    "name" : "AWS SQS",
+    "scope" : {
+      "elementName" : null,
+      "elementType" : "SQS",
+      "elementTags" : null
+    },
+    "metrics" : [ {
+      "match" : "aws\\.sqs\\.approximate.*",
+      "properties" : {
+        "STATISTIC" : "sum",
+        "tags" : {
+          "unit" : "count"
+        }
+      }
+    }, {
+      "match" : "aws\\.sqs\\.numberof.*",
+      "properties" : {
+        "STATISTIC" : "sum",
+        "tags" : {
+          "unit" : "count"
+        }
+      }
+    }, {
+      "match" : "aws.sqs.sentmessagesize",
+      "properties" : {
+        "tags" : {
+          "unit" : "bytes"
+        }
+      }
+    }, {
+      "match" : "netuitive.aws.sqs.emptyreceivepercent",
+      "properties" : {
+        "tags" : {
+          "unit" : "percent"
+        },
+        "validMax" : 100
+      }
+    }, {
+      "match" : "netuitive.aws.sqs.arrivalrate",
+      "properties" : {
+        "tags" : {
+          "unit" : "ops"
+        }
+      }
+    }, {
+      "match" : "netuitive.aws.sqs.completionrate",
+      "properties" : {
+        "tags" : {
+          "unit" : "ops"
+        }
+      }
+    }, {
+      "match" : "netuitive.aws.sqs.totalmessagesinqueue",
+      "properties" : {
+        "tags" : {
+          "unit" : "count"
+        }
+      }
+    } ]
+  }
+}

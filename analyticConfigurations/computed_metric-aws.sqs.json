@@ -1,0 +1,43 @@
+{
+  "analyticConfiguration" : {
+    "tenantId" : null,
+    "type" : "COMPUTED_METRIC",
+    "id" : null,
+    "packageId" : null,
+    "name" : "AWS SQS",
+    "scope" : {
+      "elementName" : null,
+      "elementType" : "SQS",
+      "elementTags" : null
+    },
+    "metrics" : [ {
+      "match" : "netuitive.aws.sqs.arrivalrate",
+      "properties" : {
+        "expression" : "data['aws.sqs.numberofmessagessent'].actual / 300",
+        "fqn" : "netuitive.aws.sqs.arrivalrate",
+        "name" : "Arrival Rate"
+      }
+    }, {
+      "match" : "netuitive.aws.sqs.completionrate",
+      "properties" : {
+        "expression" : "data['aws.sqs.numberofmessagesdeleted'].actual / 300",
+        "fqn" : "netuitive.aws.sqs.completionrate",
+        "name" : "Completion Rate"
+      }
+    }, {
+      "match" : "netuitive.aws.sqs.emptyreceivepercent",
+      "properties" : {
+        "expression" : "data['aws.sqs.numberofemptyreceives'].actual == 0 ? 0 : 100 * (data['aws.sqs.numberofemptyreceives'].actual / (data['aws.sqs.numberofemptyreceives'].actual + data['aws.sqs.numberofmessagesreceived'].actual))",
+        "fqn" : "netuitive.aws.sqs.emptyreceivepercent",
+        "name" : "Empty Receive Percent"
+      }
+    }, {
+      "match" : "netuitive.aws.sqs.totalmessagesinqueue",
+      "properties" : {
+        "expression" : "data['aws.sqs.approximatenumberofmessagesvisible'].actual + data['aws.sqs.approximatenumberofmessagesnotvisible'].actual + data['aws.sqs.approximatenumberofmessagesdelayed'].actual",
+        "fqn" : "netuitive.aws.sqs.totalmessagesinqueue",
+        "name" : "Total Messages in Queue"
+      }
+    } ]
+  }
+}

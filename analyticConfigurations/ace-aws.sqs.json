@@ -1,0 +1,21 @@
+{
+  "analyticConfiguration" : {
+    "tenantId" : null,
+    "type" : "ACE",
+    "id" : null,
+    "packageId" : null,
+    "name" : "AWS SQS",
+    "scope" : {
+      "elementName" : null,
+      "elementType" : "SQS",
+      "elementTags" : null
+    },
+    "metrics" : [ {
+      "match" : ".*",
+      "properties" : {
+        "baseline" : true,
+        "correlation" : false
+      }
+    } ]
+  }
+}
