@@ -1,6 +1,6 @@
 {
   "id" : "netuitive.packages.aws.sqs",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "manifest" : {
     "name" : "Netuitive Packages AWS SQS",
     "description" : "A set of Netuitive analytics configurations, polices, dashboards, and reports that are used to monitor performance of AWS Simple Queue Service (SQS) resources.",
@@ -16,13 +16,7 @@
     "tags" : [ ],
     "checksum" : null
   },
-  "policies" : [ {
-    "data" : {
-      "file" : "policies/aws.sqs.-.queue.not.being.read.json",
-      "encoding" : "application/json",
-      "content" : null
-    }
-  } ],
+  "policies" : [ ],
   "analyticConfigurations" : [ {
     "data" : {
       "file" : "analyticConfigurations/ace-aws.sqs.json",
