@@ -54,17 +54,20 @@
         "selectedAttributes" : "[]",
         "elementScopeTags" : "[]",
         "useElementNameContains" : "true",
+        "useAllElementScopeTags" : "false",
         "element_id" : null,
         "elementScopeTypes" : "[\"SQS\"]",
         "metricLimit" : "10",
+        "useAllMetricScopeTags" : "false",
         "metricUnit" : null,
         "metricAggs" : "[]",
         "elementScopeIds" : "[]",
         "elementScopeAttributes" : "[]",
         "groupName" : null,
-        "elementNameContains" : "jobrnd",
+        "elementNameContains" : "",
         "showHighest" : "true",
         "metric_fqn" : null,
+        "metricScopeTags" : "[]",
         "width" : "medium",
         "metrics" : "[]",
         "selectedTab" : "table"
@@ -72,7 +75,7 @@
       "dashboardId" : null,
       "userId" : null,
       "created" : "2016-04-20T14:30:41Z",
-      "updated" : "2016-04-20T14:30:48Z"
+      "updated" : "2016-05-16T19:33:03Z"
     }, {
       "id" : "6f87f5ef-f46f-454f-bdcb-47fd80371498",
       "name" : "Tags",
