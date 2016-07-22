@@ -8,7 +8,8 @@
     "scope" : {
       "elementName" : null,
       "elementType" : "SQS",
-      "elementTags" : null
+      "elementTags" : null,
+      "metricMatches" : null
     },
     "metrics" : [ {
       "match" : "netuitive.aws.sqs.arrivalrate",
