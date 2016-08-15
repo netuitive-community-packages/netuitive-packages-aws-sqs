@@ -1,8 +1,13 @@
-#netuitive.packages.aws.sqs 1.0.3
+#netuitive.packages.aws.sqs 1.1.0
 
 For detailed information on this package, please refer to the [online documentation](https://help.app.netuitive.com/Content/Misc/Datasources/AWS/new_aws_datasource.htm).
 
 ##Release History
+
+###Version 1.1.0
+
+* Added a new policy to detect when the arrival rate on a queue is greater than the completion rate for an extended period of time.
+* Updated the package compatibilities configuration.
 
 ###Version 1.0.3
 
