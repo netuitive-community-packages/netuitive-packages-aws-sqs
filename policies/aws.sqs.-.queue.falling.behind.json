@@ -1,0 +1,38 @@
+{
+  "policy" : {
+    "id" : null,
+    "name" : "AWS SQS - Queue Falling Behind",
+    "description" : "The arrival rate for the queue has been greater than the completion rate for at least 2 hours.  This is an indication that processing of the queue is falling behind.",
+    "scope" : {
+      "elementName" : null,
+      "elementNameExclude" : null,
+      "fqnIncludes" : [ ],
+      "fqnExcludes" : [ ],
+      "elementType" : "SQS",
+      "elementTags" : { }
+    },
+    "duration" : 7200,
+    "conditions" : [ {
+      "metric" : "netuitive.aws.sqs.arrivalrate",
+      "wildcard" : null,
+      "metricScopeTags" : { },
+      "analytic" : "actual",
+      "operator" : ">",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : "netuitive.aws.sqs.completionrate",
+      "metricThresholdAnalytic" : null
+    } ],
+    "eventConditions" : [ ],
+    "actions" : [ {
+      "type" : "event",
+      "category" : 2
+    } ],
+    "enabled" : true,
+    "deleted" : false,
+    "originTenantId" : null,
+    "originPolicyId" : null,
+    "creatorEmail" : null,
+    "lastUpdated" : null
+  }
+}
