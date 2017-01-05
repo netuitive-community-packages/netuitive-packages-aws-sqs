@@ -12,7 +12,14 @@
       "metricMatches" : null
     },
     "metrics" : [ {
-      "match" : "aws\\.sqs\\.approximate.*",
+      "match" : "aws\\.sqs\\.approximateage.*",
+      "properties" : {
+        "tags" : {
+          "unit" : "s"
+        }
+      }
+    }, {
+      "match" : "aws\\.sqs\\.approximatenumber.*",
       "properties" : {
         "STATISTIC" : "sum",
         "tags" : {
