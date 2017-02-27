@@ -6,7 +6,7 @@ For detailed information on this package, please refer to the [online documentat
 
 ###Version 1.3.0
 
-* Updated version number and added a description under the release history.
+* Updated dashboard layouts for gridstack.
 
 ###Version 1.2.0
 
