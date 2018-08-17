@@ -1,177 +1,117 @@
 {
-  "dashboard" : {
-    "name" : "AWS SQS Element Detail Page",
-    "description" : null,
-    "layout" : null,
-    "properties" : {
-      "integrationType" : null,
-      "timeRangeDuration" : "3600",
-      "gridstackContents" : "[{\"id\":\"d00b3344-ecc7-4cae-9f94-57b700fdfbf8\",\"x\":0,\"y\":0,\"width\":6,\"height\":9},{\"id\":\"ec63fabe-adcc-4d94-9400-7b89b9145be9\",\"x\":0,\"y\":29,\"width\":12,\"height\":10},{\"id\":\"6f87f5ef-f46f-454f-bdcb-47fd80371498\",\"x\":6,\"y\":19,\"width\":6,\"height\":10},{\"id\":\"5dc51675-7932-4e54-b143-e430fa9b9e44\",\"x\":6,\"y\":9,\"width\":6,\"height\":10},{\"id\":\"3c11a0c7-51e7-476c-8186-48f8dac7788a\",\"x\":0,\"y\":19,\"width\":6,\"height\":10},{\"id\":\"ce2d63a1-e77c-4761-b997-59919e1deddf\",\"x\":0,\"y\":9,\"width\":6,\"height\":10},{\"id\":\"8acfd194-832d-4f63-84e8-a95d32618795\",\"x\":6,\"y\":0,\"width\":6,\"height\":9}]",
-      "refreshIntervalSeconds" : "300",
-      "wrap" : "true"
+  "dashboard": {
+    "name": "AWS SQS Element Detail Page",
+    "private": false,
+    "properties": {
+      "gridstackContents": "[{\"id\":\"d00b3344-ecc7-4cae-9f94-57b700fdfbf8\",\"x\":0,\"y\":0,\"width\":6,\"height\":9},{\"id\":\"ec63fabe-adcc-4d94-9400-7b89b9145be9\",\"x\":0,\"y\":29,\"width\":12,\"height\":10},{\"id\":\"6f87f5ef-f46f-454f-bdcb-47fd80371498\",\"x\":6,\"y\":19,\"width\":6,\"height\":10},{\"id\":\"5dc51675-7932-4e54-b143-e430fa9b9e44\",\"x\":6,\"y\":9,\"width\":6,\"height\":10},{\"id\":\"3c11a0c7-51e7-476c-8186-48f8dac7788a\",\"x\":0,\"y\":19,\"width\":6,\"height\":10},{\"id\":\"ce2d63a1-e77c-4761-b997-59919e1deddf\",\"x\":0,\"y\":9,\"width\":6,\"height\":10},{\"id\":\"8acfd194-832d-4f63-84e8-a95d32618795\",\"x\":6,\"y\":0,\"width\":6,\"height\":9}]",
+      "refreshIntervalSeconds": "300",
+      "timeRangeDuration": "3600",
+      "wrap": "true"
     },
-    "widgets" : [ {
-      "id" : "d00b3344-ecc7-4cae-9f94-57b700fdfbf8",
-      "name" : "Arrival Rate",
-      "description" : null,
-      "widgetType" : "metric-status",
-      "properties" : {
-        "visualization" : "gauge",
-        "showElementTotal" : "true",
-        "selectedAttributes" : "[]",
-        "elementScopeTags" : "[]",
-        "useElementNameContains" : "true",
-        "element_id" : null,
-        "elementScopeTypes" : "[]",
-        "metricLimit" : "10",
-        "metricAggs" : "[]",
-        "elementScopeIds" : "[]",
-        "elementScopeAttributes" : "[]",
-        "showHighest" : "true",
-        "metric_fqn" : "netuitive.aws.sqs.arrivalrate",
-        "width" : "auto",
-        "metrics" : "[]",
-        "selectedTab" : "table"
+    "type": "SQS",
+    "widgets": [
+      {
+        "id": "d00b3344-ecc7-4cae-9f94-57b700fdfbf8",
+        "name": "Arrival Rate",
+        "properties": {
+          "metricLimit": "10",
+          "metric_fqn": "netuitive.aws.sqs.arrivalrate",
+          "selectedTab": "table",
+          "showElementTotal": "true",
+          "showHighest": "true",
+          "useElementNameContains": "true",
+          "visualization": "gauge",
+          "width": "auto"
+        },
+        "widgetType": "metric-status"
+      },
+      {
+        "id": "ec63fabe-adcc-4d94-9400-7b89b9145be9",
+        "name": "Events",
+        "properties": {
+          "elementScopeTypes": "[\"SQS\"]",
+          "metricLimit": "10",
+          "selectedTab": "table",
+          "showElementTotal": "true",
+          "showHighest": "true",
+          "useAllElementScopeTags": "false",
+          "useAllMetricScopeTags": "false",
+          "useElementNameContains": "true",
+          "width": "medium"
+        },
+        "widgetType": "event-ticker"
+      },
+      {
+        "id": "6f87f5ef-f46f-454f-bdcb-47fd80371498",
+        "name": "Tags",
+        "properties": {
+          "metricLimit": "10",
+          "selectedTab": "table",
+          "showElementTotal": "true",
+          "showHighest": "true",
+          "useElementNameContains": "true",
+          "width": "auto"
+        },
+        "widgetType": "element-tags"
+      },
+      {
+        "id": "5dc51675-7932-4e54-b143-e430fa9b9e44",
+        "name": "Breakdown of Messages in Queue",
+        "properties": {
+          "elementNameContains": "jobrnd",
+          "elementScopeTypes": "[\"SQS\"]",
+          "metricLimit": "10",
+          "metrics": "[{\"fqn\":\"aws.sqs.approximatenumberofmessagesvisible\",\"aggFns\":[]},{\"fqn\":\"aws.sqs.approximatenumberofmessagesnotvisible\",\"aggFns\":[]},{\"fqn\":\"aws.sqs.approximatenumberofmessagesdelayed\",\"aggFns\":[]}]",
+          "selectedTab": "table",
+          "showElementTotal": "true",
+          "showHighest": "true",
+          "useElementNameContains": "true",
+          "width": "auto"
+        },
+        "widgetType": "stacked-area"
+      },
+      {
+        "id": "3c11a0c7-51e7-476c-8186-48f8dac7788a",
+        "name": "Attributes",
+        "properties": {
+          "metricLimit": "10",
+          "selectedTab": "table",
+          "showElementTotal": "true",
+          "showHighest": "true",
+          "useElementNameContains": "true",
+          "width": "auto"
+        },
+        "widgetType": "element-attributes"
+      },
+      {
+        "id": "ce2d63a1-e77c-4761-b997-59919e1deddf",
+        "name": "Total Messages in Queue",
+        "properties": {
+          "metricLimit": "10",
+          "metric_fqn": "netuitive.aws.sqs.totalmessagesinqueue",
+          "selectedTab": "table",
+          "showElementTotal": "true",
+          "showHighest": "true",
+          "useElementNameContains": "true",
+          "width": "auto"
+        },
+        "widgetType": "metric-time-series"
+      },
+      {
+        "id": "8acfd194-832d-4f63-84e8-a95d32618795",
+        "name": "Completion Rate",
+        "properties": {
+          "metricLimit": "10",
+          "metric_fqn": "netuitive.aws.sqs.completionrate",
+          "selectedTab": "table",
+          "showElementTotal": "true",
+          "showHighest": "true",
+          "useElementNameContains": "true",
+          "visualization": "gauge",
+          "width": "auto"
+        },
+        "widgetType": "metric-status"
       }
-    }, {
-      "id" : "ec63fabe-adcc-4d94-9400-7b89b9145be9",
-      "name" : "Events",
-      "description" : null,
-      "widgetType" : "event-ticker",
-      "properties" : {
-        "visualization" : null,
-        "showElementTotal" : "true",
-        "selectedAttributes" : "[]",
-        "elementScopeTags" : "[]",
-        "useElementNameContains" : "true",
-        "useAllElementScopeTags" : "false",
-        "element_id" : null,
-        "elementScopeTypes" : "[\"SQS\"]",
-        "metricLimit" : "10",
-        "useAllMetricScopeTags" : "false",
-        "metricUnit" : null,
-        "metricAggs" : "[]",
-        "elementScopeIds" : "[]",
-        "elementScopeAttributes" : "[]",
-        "groupName" : null,
-        "elementNameContains" : "",
-        "showHighest" : "true",
-        "metric_fqn" : null,
-        "metricScopeTags" : "[]",
-        "width" : "medium",
-        "metrics" : "[]",
-        "selectedTab" : "table"
-      }
-    }, {
-      "id" : "6f87f5ef-f46f-454f-bdcb-47fd80371498",
-      "name" : "Tags",
-      "description" : null,
-      "widgetType" : "element-tags",
-      "properties" : {
-        "showElementTotal" : "true",
-        "selectedAttributes" : "[]",
-        "elementScopeTags" : "[]",
-        "useElementNameContains" : "true",
-        "element_id" : null,
-        "elementScopeTypes" : "[]",
-        "metricLimit" : "10",
-        "metricAggs" : "[]",
-        "elementScopeIds" : "[]",
-        "elementScopeAttributes" : "[]",
-        "showHighest" : "true",
-        "width" : "auto",
-        "metrics" : "[]",
-        "selectedTab" : "table"
-      }
-    }, {
-      "id" : "5dc51675-7932-4e54-b143-e430fa9b9e44",
-      "name" : "Breakdown of Messages in Queue",
-      "description" : null,
-      "widgetType" : "stacked-area",
-      "properties" : {
-        "showElementTotal" : "true",
-        "selectedAttributes" : "[]",
-        "elementScopeTags" : "[]",
-        "useElementNameContains" : "true",
-        "elementScopeTypes" : "[\"SQS\"]",
-        "metricLimit" : "10",
-        "metricAggs" : "[]",
-        "elementScopeIds" : "[]",
-        "elementScopeAttributes" : "[]",
-        "elementNameContains" : "jobrnd",
-        "showHighest" : "true",
-        "width" : "auto",
-        "metrics" : "[{\"fqn\":\"aws.sqs.approximatenumberofmessagesvisible\",\"aggFns\":[]},{\"fqn\":\"aws.sqs.approximatenumberofmessagesnotvisible\",\"aggFns\":[]},{\"fqn\":\"aws.sqs.approximatenumberofmessagesdelayed\",\"aggFns\":[]}]",
-        "selectedTab" : "table"
-      }
-    }, {
-      "id" : "3c11a0c7-51e7-476c-8186-48f8dac7788a",
-      "name" : "Attributes",
-      "description" : null,
-      "widgetType" : "element-attributes",
-      "properties" : {
-        "showElementTotal" : "true",
-        "selectedAttributes" : "[]",
-        "elementScopeTags" : "[]",
-        "useElementNameContains" : "true",
-        "element_id" : null,
-        "elementScopeTypes" : "[]",
-        "metricLimit" : "10",
-        "metricAggs" : "[]",
-        "elementScopeIds" : "[]",
-        "elementScopeAttributes" : "[]",
-        "showHighest" : "true",
-        "width" : "auto",
-        "metrics" : "[]",
-        "selectedTab" : "table"
-      }
-    }, {
-      "id" : "ce2d63a1-e77c-4761-b997-59919e1deddf",
-      "name" : "Total Messages in Queue",
-      "description" : null,
-      "widgetType" : "metric-time-series",
-      "properties" : {
-        "showElementTotal" : "true",
-        "selectedAttributes" : "[]",
-        "elementScopeTags" : "[]",
-        "useElementNameContains" : "true",
-        "element_id" : null,
-        "elementScopeTypes" : "[]",
-        "metricLimit" : "10",
-        "metricAggs" : "[]",
-        "elementScopeIds" : "[]",
-        "elementScopeAttributes" : "[]",
-        "showHighest" : "true",
-        "metric_fqn" : "netuitive.aws.sqs.totalmessagesinqueue",
-        "width" : "auto",
-        "metrics" : "[]",
-        "selectedTab" : "table"
-      }
-    }, {
-      "id" : "8acfd194-832d-4f63-84e8-a95d32618795",
-      "name" : "Completion Rate",
-      "description" : null,
-      "widgetType" : "metric-status",
-      "properties" : {
-        "visualization" : "gauge",
-        "showElementTotal" : "true",
-        "selectedAttributes" : "[]",
-        "elementScopeTags" : "[]",
-        "useElementNameContains" : "true",
-        "element_id" : null,
-        "elementScopeTypes" : "[]",
-        "metricLimit" : "10",
-        "metricAggs" : "[]",
-        "elementScopeIds" : "[]",
-        "elementScopeAttributes" : "[]",
-        "showHighest" : "true",
-        "metric_fqn" : "netuitive.aws.sqs.completionrate",
-        "width" : "auto",
-        "metrics" : "[]",
-        "selectedTab" : "table"
-      }
-    } ],
-    "type" : "SQS",
-    "private" : false
+    ]
   }
 }
