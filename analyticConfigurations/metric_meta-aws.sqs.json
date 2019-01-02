@@ -12,7 +12,7 @@
       {
         "match": "aws\\.sqs\\.approximatenumber.*",
         "properties": {
-          "STATISTIC": "sum",
+          "STATISTIC": "avg",
           "tags": {
             "unit": "count"
           }
