@@ -4,7 +4,10 @@
       {
         "match": "netuitive.aws.sqs.arrivalrate",
         "properties": {
-          "expression": "data['aws.sqs.numberofmessagessent'].actual / 300",
+          "expressions": [
+            "${aws.sqs.numberofmessagessent}.actual / 300",
+            "0"
+          ],
           "fqn": "netuitive.aws.sqs.arrivalrate",
           "name": "Arrival Rate"
         }
@@ -12,7 +15,10 @@
       {
         "match": "netuitive.aws.sqs.completionrate",
         "properties": {
-          "expression": "data['aws.sqs.numberofmessagesdeleted'].actual / 300",
+          "expressions": [
+            "${aws.sqs.numberofmessagesdeleted}.actual / 300",
+            "0"
+          ],
           "fqn": "netuitive.aws.sqs.completionrate",
           "name": "Completion Rate"
         }
@@ -20,7 +26,10 @@
       {
         "match": "netuitive.aws.sqs.emptyreceivepercent",
         "properties": {
-          "expression": "data['aws.sqs.numberofemptyreceives'].actual == 0 ? 0 : 100 * (data['aws.sqs.numberofemptyreceives'].actual / (data['aws.sqs.numberofemptyreceives'].actual + data['aws.sqs.numberofmessagesreceived'].actual))",
+          "expressions": [
+            "100 * ${aws.sqs.numberofemptyreceives}.actual / (${aws.sqs.numberofemptyreceives}.actual + ${aws.sqs.numberofmessagesreceived}.actual)",
+            "0"
+          ],
           "fqn": "netuitive.aws.sqs.emptyreceivepercent",
           "name": "Empty Receive Percent"
         }
@@ -28,7 +37,10 @@
       {
         "match": "netuitive.aws.sqs.totalmessagesinqueue",
         "properties": {
-          "expression": "data['aws.sqs.approximatenumberofmessagesvisible'].actual + data['aws.sqs.approximatenumberofmessagesnotvisible'].actual + data['aws.sqs.approximatenumberofmessagesdelayed'].actual",
+          "expressions": [
+            "${aws.sqs.approximatenumberofmessagesvisible}.actual + ${aws.sqs.approximatenumberofmessagesnotvisible}.actual + ${aws.sqs.approximatenumberofmessagesdelayed}.actual",
+            "0"
+          ],
           "fqn": "netuitive.aws.sqs.totalmessagesinqueue",
           "name": "Total Messages in Queue"
         }
