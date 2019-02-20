@@ -4,6 +4,14 @@ For detailed information on this package, please refer to the [online documentat
 
 ## Release History
 
+### Version next
+
+### Version 1.5.0
+
+* Convert computed metrics to new format
+* Adjusted build to use metricly-cli for validation
+* Fixed bug with ApproximateNumber* matched metrics displaying sums rather than averages.
+
 ### Version 1.4.0
 
 * Updated element details dashboard layout
