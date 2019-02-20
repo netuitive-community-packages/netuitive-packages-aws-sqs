@@ -6,6 +6,7 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+* Convert computed metrics to new format
 * Adjusted build to use metricly-cli for validation
 * Fixed bug with ApproximateNumber* matched metrics displaying sums rather than averages.
 
