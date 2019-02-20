@@ -5,8 +5,7 @@
         "match": "netuitive.aws.sqs.arrivalrate",
         "properties": {
           "expressions": [
-            "${aws.sqs.numberofmessagessent}.actual / 300",
-            "0"
+            "${aws.sqs.numberofmessagessent}.actual / 300"
           ],
           "fqn": "netuitive.aws.sqs.arrivalrate",
           "name": "Arrival Rate"
@@ -16,8 +15,7 @@
         "match": "netuitive.aws.sqs.completionrate",
         "properties": {
           "expressions": [
-            "${aws.sqs.numberofmessagesdeleted}.actual / 300",
-            "0"
+            "${aws.sqs.numberofmessagesdeleted}.actual / 300"
           ],
           "fqn": "netuitive.aws.sqs.completionrate",
           "name": "Completion Rate"
@@ -38,8 +36,7 @@
         "match": "netuitive.aws.sqs.totalmessagesinqueue",
         "properties": {
           "expressions": [
-            "${aws.sqs.approximatenumberofmessagesvisible}.actual + ${aws.sqs.approximatenumberofmessagesnotvisible}.actual + ${aws.sqs.approximatenumberofmessagesdelayed}.actual",
-            "0"
+            "${aws.sqs.approximatenumberofmessagesvisible}.actual + ${aws.sqs.approximatenumberofmessagesnotvisible}.actual + ${aws.sqs.approximatenumberofmessagesdelayed}.actual"
           ],
           "fqn": "netuitive.aws.sqs.totalmessagesinqueue",
           "name": "Total Messages in Queue"
