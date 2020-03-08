@@ -2,6 +2,8 @@
 
 ### Version next
 
+* Convert single elementType to elementTypes array in policy scope
+
 ### Version 1.5.0
 
 * Convert computed metrics to new format
